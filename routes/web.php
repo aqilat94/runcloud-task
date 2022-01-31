@@ -36,6 +36,6 @@ Route::get('/update/task/{task}', [App\Http\Controllers\TaskController::class, '
 Route::get('/delete/task/{task}', [App\Http\Controllers\TaskController::class, 'destroy'])->name('task:delete');
 
 //Google Socialite
-Route::get('/auth/google', [App\Http\Controllers\SocialiteController::class, 'redirectToGoogle']);
-Route::get('/auth/google/callback', [App\Http\Controllers\SocialiteController::class, 'handleGoogleCallback']);
+Route::get('auth/google', [App\Http\Controllers\SocialiteController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [App\Http\Controllers\SocialiteController::class, 'handleGoogleCallback']);
 
