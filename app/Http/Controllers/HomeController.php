@@ -23,6 +23,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $workspaces = auth()->user()->workspaces;
+
+        $tasks = auth()->user()->tasks;
+
+        $incomplete_task = $tasks->where('status', 0);
+
+        $complete_task = $tasks->where('status', 1);
+
+        return view('home', compact(
+            'workspaces',
+            'incomplete_task',
+            'complete_task'
+        ));
     }
 }
