@@ -47,27 +47,31 @@
                     </div>
                 </div>
             </div>
-            
-            <table class="table table-borderless table-striped table-dark">
-                <thead>
-                <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">More</th>
-                </tr>
-                </thead>
-                <tbody>
-                    @foreach ($workspaces as $workspace)
+
+            <div class="col-lg-12">
+                <div class="table-responsive"> 
+                    <table class="table table-borderless table-striped table-dark">
+                        <thead>
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $workspace->name }}</td>
-                            <td>
-                                <a href="{{ route('workspace:show' , $workspace) }}" class="btn btn-primary">View</a>
-                            </td>
+                            <th scope="col">No.</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">More</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                        </thead>
+                        <tbody>
+                            @foreach ($workspaces as $workspace)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $workspace->name }}</td>
+                                    <td>
+                                        <a href="{{ route('workspace:show' , $workspace) }}" class="btn btn-primary">View</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
         </div>
     </div>
