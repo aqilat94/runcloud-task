@@ -34,10 +34,20 @@
                                 <div class="form-group">
                                     <label for="name">Workspace Name</label>
                                     <input type="text" name="name" class="form-control" id="name" placeholder="My Workspace" required>
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Workspace Description</label>
                                     <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
+                                    @if ($errors->has('description'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('description') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="modal-footer">

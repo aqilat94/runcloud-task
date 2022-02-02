@@ -80,19 +80,39 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="name">Task Name</label>
-                                        <input type="text" name="name" class="form-control" id="name" placeholder="My Task">
+                                        <input type="text" name="name" class="form-control" id="name" placeholder="My Task" required>
+                                        @if ($errors->has('name'))
+                                            <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="description">Task Description</label>
-                                        <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+                                        <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
+                                        @if ($errors->has('description'))
+                                            <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('description') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="date">Due Date</label>
-                                        <input type="date" class="form-control" id="due_date" name="due_date">
+                                        <input type="date" class="form-control" id="due_date" name="due_date" required>
+                                        @if ($errors->has('due_date'))
+                                            <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('due_date') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="time">Due Time</label>
-                                        <input type="time" class="form-control" id="due_time" name="due_time">
+                                        <input type="time" class="form-control" id="due_time" name="due_time" required>
+                                        @if ($errors->has('due_time'))
+                                            <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('due_time') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="modal-footer">
